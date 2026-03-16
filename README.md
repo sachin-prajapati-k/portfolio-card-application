@@ -1,3 +1,62 @@
+# Portfolio Card Application
+
+A small React application that displays an interactive personal profile card. It focuses on component structure, props, styling, and basic state management for a clean, modern UI.
+
+## Tech Stack
+
+- React (Create React App)
+- CSS for layout and styling
+
+## Features
+
+- **Reusable component structure**
+  - Main `App` component provides data.
+  - `ProfileCard` component renders the full card UI and handles all interactions.
+
+- **Dynamic content via props**
+  - `App` defines an array of profile objects and passes them to `ProfileCard` as the `profiles` prop.
+  - Each profile contains:
+    - `name`
+    - `title`
+    - `bio`
+    - `skills` (array of skill strings)
+    - `initialLikes`
+  - `ProfileCard` renders the profile fields and maps `skills` into skill badges.
+
+- **Interactivity and event handling**
+  - **Theme toggle**
+    - Button in the top-right corner and a chip in the footer toggle between light and dark themes.
+    - The card’s background, text, and accents update based on the current theme.
+  - **Profile photo cycling**
+    - Clicking the circular avatar cycles through a small set of predefined profile photos.
+  - **Profile switching**
+    - Left (`‹`) and right (`›`) arrow buttons in the footer (just before the like counter) cycle between four different profiles.
+    - The pager label shows the current profile index as `X / 4`.
+  - **Contact alert**
+    - The `Contact` button shows a browser alert including the current profile’s name.
+
+- **State management**
+  - Uses `useState` inside `ProfileCard` to manage:
+    - Current theme (`light` or `dark`).
+    - Current photo index for the avatar.
+    - Current active profile index.
+    - A likes array so each profile has its own like count.
+  - Clicking the heart button increments the like count for the active profile and updates the displayed value immediately.
+
+- **Styling and layout**
+  - Centered card layout with soft shadows, rounded corners, and responsive spacing.
+  - Skill badges, footer controls, and arrow buttons styled to resemble a modern profile/portfolio card.
+  - Includes dark-mode variants for key elements.
+
+## How to Run
+
+```bash
+npm install
+npm start
+```
+
+The app runs on `http://localhost:3000` by default. Open it in a browser to interact with the profile card, switch profiles, toggle the theme, cycle the photo, and use the like and contact actions.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
